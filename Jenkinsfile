@@ -17,8 +17,8 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    sh 'pip install -r requirements.txt'
-                    sh 'pip install pytest'
+                    sh 'pip install --user -r requirements.txt'
+                    sh 'pip install --user pytest'
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    sh 'pytest'
+                    sh 'export PATH=$PATH:$HOME/.local/bin && pytest'
                 }
             }
         }
