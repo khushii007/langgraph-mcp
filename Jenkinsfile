@@ -14,11 +14,20 @@ pipeline {
             }
         }
 
+        stage('Check Python Version') {
+            steps {
+                script {
+                    // Output Python version to verify which version Jenkins is using
+                    sh 'python3 --version'
+                }
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
                 script {
                     sh 'pip install --user -r requirements.txt'
-                    sh 'pip install .'
+                    sh 'pip install --user .'
                     sh 'pip install --user pytest'
                 }
             }
