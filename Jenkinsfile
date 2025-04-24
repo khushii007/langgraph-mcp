@@ -26,6 +26,10 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
+                    sh '''
+	               sudo apt-get update
+	               sudo apt-get install -y python3-distutils
+		    '''
                     sh 'pip install --user -r requirements.txt'
                     sh 'pip install --user .'
                     sh 'pip install --user pytest'
