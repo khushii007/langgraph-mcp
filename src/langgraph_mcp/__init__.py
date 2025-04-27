@@ -9,8 +9,8 @@ This module routes user message to appropriate MCP server.
 
 """
 
-from langgraph_mcp.assistant_graph import graph as assistant_graph
-from langgraph_mcp.build_router_graph import graph as build_router_graph
+from langgraph_mcp.assistant_graph import graph as graph
+from langgraph_mcp.build_router_graph import graph as index_graph
 
 
-__all__ = ["assistant_graph", "build_router_graph"]
+__all__ = ["graph", "index_graph"]
